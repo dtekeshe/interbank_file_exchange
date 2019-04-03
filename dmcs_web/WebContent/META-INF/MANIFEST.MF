@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Class-Path: 
+ <exclusions>
+       <module name="org.hibernate"/>
+ </exclusions>
+ Dependencies: org.javassist export,org.apache.velocity export services,org.antlr
+

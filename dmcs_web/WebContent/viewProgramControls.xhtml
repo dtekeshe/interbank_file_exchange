@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>View Program Controls</title>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+    </h:head>
+
+    <ui:composition template="template.xhtml">
+
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+
+            <h:body style="background-image:url('resources/images/background2.jpg');">
+                <h:outputStylesheet library="css" name="style.css"/>
+                <p:growl id="growl" sticky="true" showsDetail="true"/>
+
+                <h:graphicImage value="/resources/images/logo.png" />
+                <h2>View Program Controls</h2>
+
+                <h:form>
+                    <p:panel id="searchPanel">
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="Enter FileName :"/>
+                            <p:inputText value="#{csoProgramControlsController.fileName}"/>
+                            <p:commandButton value="Search" action="#{csoProgramControlsController.programControlsDTOList}" onclick="submit();"/>
+                        </p:panelGrid>
+                    </p:panel>
+                    <p></p>
+
+                    <p:dataTable var="file" value="#{csoProgramControlsController.programControlsDTOList}"
+                     paginator="true" rows="10"
+                     paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     rowsPerPageTemplate="5,10,15" lazy="true" rowHover="true" rowSelectMode="single" scrollable="true">
+                        <p:column headerText="ARB DATA">
+                            <h:outputText value="#{file.arbData}" />
+                        </p:column>
+                        <p:column headerText="PROGRAM NAME">
+                            <h:outputText value="#{file.programName}" />
+                        </p:column>
+                        <p:column headerText="SERVICE CODE">
+                            <h:outputText value="#{file.serviceCode}" />
+                        </p:column>
+                        <p:column headerText="SUB SERVICE CODE">
+                            <h:outputText value="#{file.subServiceCode}" />
+                        </p:column>
+                        <p:column headerText="STATUS">
+                            <h:outputText value="#{file.status}" />
+                        </p:column>
+                        <p:column headerText="START TIME">
+                            <h:outputText value="#{file.startTime}" />
+                        </p:column>
+                        <p:column headerText="END TIME">
+                            <h:outputText value="#{file.endTime}" />
+                        </p:column>
+                        <p:column headerText="EXECUTION AVERAGE">
+                            <h:outputText value="#{file.executionAverage}" />
+                        </p:column>
+                        <p:column headerText="EXECUTION LAST">
+                            <h:outputText value="#{file.executionLast}" />
+                        </p:column>
+                        <p:column headerText="PAYMENT STREAM">
+                            <h:outputText value="#{file.paymentStream}" />
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </h:body>
+
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -1,0 +1,5 @@
+za\co\bsv\library\transformer\X2TDecimalFormat.class
+za\co\bsv\library\transformer\BSVX2TTransformer.class
+za\co\bsv\library\transformer\X2TTransformer.class
+za\co\bsv\library\transformer\X2TTransformerFactory.class
+za\co\bsv\library\transformer\X2TTransformerException.class

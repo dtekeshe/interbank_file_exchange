@@ -1,0 +1,10 @@
+# ##########################################################################
+# # $Rev::                                    $: Revision of last commit   #
+# # $Author::                                 $: Author of last commit     #
+# # $Date::                                   $: Date of last commit       #
+# ##########################################################################
+#default transformer properties
+EFT=za.co.bsv.bend.transformer.EFTTransformer
+PDF=za.co.bsv.bend.transformer.PDFTransformer
+XSL=za.co.bsv.bend.transformer.XSLTransformer
+TXT=za.co.bsv.bend.transformer.XML2TXTTransformer

@@ -1,0 +1,9 @@
+LOAD DATA
+APPEND
+INTO TABLE CSO_PAYMENT_MCARD_PDS
+(
+   SYSTEM_SEQ_NUMBER      POSITION ( 1 : 12  ),
+   PDS_NUMBER             POSITION (13 : 16  ),
+   PDS_LENGTH             POSITION (17 : 19  ),
+   PDS_DATA               POSITION (19 : 118 )
+)

@@ -1,0 +1,58 @@
+
+
+Would you please pull the following SQL Loader Artificats and push them into Git for secure storage?
+
+ORACLE NATIVE SQL LOADER
+# Comes with Oracle installation.
+# you might need to change the path in script
+# if this utility is stored elsewhere
+ /home/oradba/oracle/product/11.2.0.1/bin/sqlldr
+
+Linux Scripts called by JAVA File Loader:
+ ipaddress:/home/jboss/dmcs/bin/remote_exec
+ ipaddress:/home/jboss/dmcs/bin/remote_clean
+
+SQL Loader Control Files
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_negative_recs.sql
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_master_card.pds.sql
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_fleet_binder.sql
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_fleet_visa.sql
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_visa.sql
+ ipaddress:/ccc01/home/cccops/tana54/ccc/sqlctl/dmcs_loader_control_file_master_card.sql
+
+FOLDERS (EMPTY)
+ # Indexed File Storage on JBOSS Server
+  ipaddress:/tana54/ccc/sqlidx/
+ # Indexed File Storage Copied from JBoss to DB Server
+  ipaddress:/ccc01/home/cccops/tana54/ccc/sqlidx
+ # bad records storage
+  ipaddress:/ccc01/home/cccops/tana54/ccc/sqlbad
+ # sql execution logs
+  ipaddress:/ccc01/home/cccops/tana54/ccc/sqllog
+
+  
+  changes for this to work with new environment
+  -------------------------------------------------------
+  
+  
+I have setup the following scripts:
+/bsva/delivery/dmcs/bin/sqlldr_exec
+/bsva/delivery/dmcs/bin/sqlldr_folders_clean
+
+SQL:
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_visa.sql
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_negative_recs.sql
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_master_card.sql
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_master_card.pds.sql
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_fleet_visa.sql
+/bsva/delivery/dmcs/sqlctl/dmcs_loader_control_file_fleet_binder.sql
+
+folders:
+/bsva/delivery/dmcs/sqlidx
+/bsva/delivery/dmcs/sqllog
+/bsva/delivery/dmcs/Sqlbad
+
+To Test:
+cd /bsva/delivery/dmcs/bin
+./sqlldr_exec dmcs_loader_control_file_master_card.sql CCB0005D MASTERCARD
+  

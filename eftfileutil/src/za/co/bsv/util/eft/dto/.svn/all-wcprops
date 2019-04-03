@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto
+END
+EFTFileDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/EFTFileDTO.java
+END
+ContraRecordDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/ContraRecordDTO.java
+END
+TransactionSetDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/TransactionSetDTO.java
+END
+InstallationHeaderDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/InstallationHeaderDTO.java
+END
+UserTrailerDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/UserTrailerDTO.java
+END
+UserHeaderDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/UserHeaderDTO.java
+END
+InstallationTrailerDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/InstallationTrailerDTO.java
+END
+EFTTransactionDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/EFTTransactionDTO.java
+END
+UserDataSetDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/dto/UserDataSetDTO.java
+END

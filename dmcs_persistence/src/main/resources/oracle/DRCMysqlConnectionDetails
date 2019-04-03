@@ -1,0 +1,10 @@
+
+
+DRC Mysql IpAddress : 172.16.161.223
+
+DRC Mysql UserName : DmcsApps
+
+DRC Mysql Password : AppsDmcs
+
+
+172.16.161.223 -u DmcsApps CCCOWNER --password=AppsDmcs

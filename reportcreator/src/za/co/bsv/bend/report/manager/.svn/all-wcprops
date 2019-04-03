@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/prod/!svn/ver/5134/BankservAfrica/ReportManager/Java/backend/trunk/ReportCreator/src/za/co/bsv/bend/report/manager
+END
+default.properties
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/prod/!svn/ver/5134/BankservAfrica/ReportManager/Java/backend/trunk/ReportCreator/src/za/co/bsv/bend/report/manager/default.properties
+END
+ReportCreatorConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/prod/!svn/ver/5134/BankservAfrica/ReportManager/Java/backend/trunk/ReportCreator/src/za/co/bsv/bend/report/manager/ReportCreatorConfiguration.java
+END
+ReportCreator.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/prod/!svn/ver/5134/BankservAfrica/ReportManager/Java/backend/trunk/ReportCreator/src/za/co/bsv/bend/report/manager/ReportCreator.java
+END
+ReportCreatorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/prod/!svn/ver/5134/BankservAfrica/ReportManager/Java/backend/trunk/ReportCreator/src/za/co/bsv/bend/report/manager/ReportCreatorException.java
+END

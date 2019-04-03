@@ -1,0 +1,28 @@
+.ui-widget, .ui-widget .ui-widget
+{
+    font-size: 12px !important;
+}
+
+.display
+{
+    display:inline-block;
+}
+
+.ui-layout-unit-content, .ui-layout-north
+{
+    background-image:url('resources/images/icmsbackground.jpg');
+}
+
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;
+}
+
+.ui-layout-unit-content {
+    overflow:visible !important;
+}
+
+.ui-panelgrid tr,
+.ui-panelgrid td {
+    border: none;
+}

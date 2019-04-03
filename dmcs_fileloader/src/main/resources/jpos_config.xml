@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE isopackager SYSTEM "genericpackager.dtd">
+<isopackager>
+  <isofield
+      id="0"
+      length="4"
+      name="MESSAGE TYPE INDICATOR"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="1"
+      length="16"
+      name="BIT MAP" 
+      class="org.jpos.iso.IFB_BITMAP"/>
+  <isofield
+      id="2"
+      length="19"
+      name="PAN - PRIMARY ACCOUNT NUMBER"
+      pad="false"
+      class="org.jpos.iso.IFA_LLNUM"/>
+  <isofield
+      id="3"
+      length="6"
+      name="PROCESSING CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="4"
+      length="12"
+      name="AMOUNT, TRANSACTION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="5"
+      length="12"
+      name="AMOUNT, RECONCILIATION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="6"
+      length="12"
+      name="AMOUNT, CARDHOLDER BILLING"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="9"
+      length="8"
+      name="CONVERSION RATE , RECONCILIATION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+
+  <isofield
+      id="10"
+      length="8"
+      name="CONVERSION RATE, CARDHOLDER BILLING"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="12"
+      length="12"
+      name="DATE AND TIME, LOCAL TRANSACTION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="14"
+      length="4"
+      name="DATE, EXPIRATION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="22"
+      length="12"
+      name="POINT OF SERVICE DATA CODE"
+      pad="true"
+      class="org.jpos.iso.IF_CHAR"/> 
+  <isofield
+      id="23"
+      length="3"
+      name="CARD SEQUENCE NUMBER"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+ <isofield
+      id="24"
+      length="3"
+      name="FUNCTION CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+ <isofield
+      id="25"
+      length="4"
+      name="MESSAGE REASON CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>     
+ <isofield
+      id="26"
+      length="4"
+      name="CARD ACCEPTOR BUSINESS CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+ <isofield
+      id="30"
+      length="24"
+      name="AMOUNT, ORIGINAL"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>      
+ <isofield
+      id="31"
+      length="23"
+      name="ACQUIRER REFERENCE DATA"
+      pad="false"
+      class="org.jpos.iso.IFA_LLNUM"/> 
+ <isofield
+      id="32"
+      length="11"
+      name="ACQUIRING INSTITUTION IDENT CODE"
+      pad="false"
+      class="org.jpos.iso.IFA_LLNUM"/> 
+ <isofield
+      id="33"
+      length="11"
+      name="FORWARDING INSTITUTION IDENT CODE"
+      pad="false"
+      class="org.jpos.iso.IFA_LLNUM"/> 
+<isofield
+      id="37"
+      length="12"
+      name="RETRIEVAL REFERENCE NUMBER"
+      class="org.jpos.iso.IF_CHAR"/> 
+ <isofield
+      id="38"
+      length="6"
+      name="ARROVAL CODE"
+      class="org.jpos.iso.IF_CHAR"/> 
+ <isofield
+      id="40"
+      length="3"
+      name="SERVICE CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>       
+ <isofield
+      id="41"
+      length="8"
+      name="CARD ACCEPTOR TERMINAL IDENTIFICACION"
+      class="org.jpos.iso.IF_CHAR"/> 
+  <isofield
+      id="42"
+      length="15"
+      name="CARD ACCEPTOR IDENTIFICATION CODE"
+      class="org.jpos.iso.IF_CHAR"/> 
+  <isofield
+      id="43"
+      length="99"
+      name="CARD ACCEPTOR NAME/LOCATION"
+      class="org.jpos.iso.IFA_LLCHAR"/> 
+   <isofield
+      id="48"
+      length="999"
+      name="ADITIONAL DATA"
+      class="org.jpos.iso.IFA_LLLCHAR"/> 
+  <isofield
+      id="49"
+      length="3"
+      name="CURRENCY CODE, TRANSACTION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="50"
+      length="3"
+      name="CURRENCY CODE, RECONCILIATION"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="51"
+      length="3"
+      name="CURRENCY CODE, CARDHOLDER BILLING"
+      class="org.jpos.iso.IFA_NUMERIC"/> 
+  <isofield
+      id="54"
+      length="20"
+      name="AMOUNTS, ADDITIONAL"
+      class="org.jpos.iso.IFA_LLLCHAR"/> 
+ <isofield
+      id="55"
+      length="255"
+      name="INTEGRATED CARD CIRCUIT SYSTEM RELATED DATA"
+      class="org.jpos.iso.IFA_LLLCHAR"/>
+  <isofield
+      id="62"
+      length="999"
+      name="ADITIONAL DATA 2"
+      class="org.jpos.iso.IFA_LLLCHAR"/>
+  <isofield
+      id="63"
+      length="16"
+      name="TRANSACTION LIFE CYCLE ID"
+      class="org.jpos.iso.IFA_LLLCHAR"/>    
+  <isofield
+      id="71"
+      length="8"
+      name="MESSAGE NUMBER"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>
+  <isofield
+      id="72"
+      length="999"
+      name="DATA RECORD"
+      class="org.jpos.iso.IFA_LLLCHAR"/>   
+  <isofield
+      id="73"
+      length="6"
+      name="DATE ACTION"
+      pad="true"
+      class="org.jpos.iso.IFA_NUMERIC"/>  
+  <isofield
+      id="93"
+      length="11"
+      name="TRANSACTION DESTINATION INST ID CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_LLNUM"/>  
+  <isofield
+      id="94"
+      length="11"
+      name="TRANSACTION ORIGINATOR INST ID CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_LLNUM"/>  
+  <isofield
+      id="95"
+      length="10"
+      name="CARD ISSUER REFERENCE DATA"
+      pad="true"
+      class="org.jpos.iso.IFA_LLNUM"/>       
+  <isofield
+      id="100"
+      length="11"
+      name="RECEIVING INSTITUTION ID CODE"
+      pad="true"
+      class="org.jpos.iso.IFA_LLNUM"/> 
+  <isofield
+      id="111"
+      length="12"
+      name="AMOUNT, CURRENCY CONVERSION ASSESSMENT"
+      pad="true"
+      class="org.jpos.iso.IFA_LLLNUM"/>             
+ <isofield
+      id="123"
+      length="999"
+      name="ADITIONAL DATA 3"
+      class="org.jpos.iso.IFA_LLLCHAR"/>
+ <isofield
+      id="124"
+      length="999"
+      name="ADITIONAL DATA 4"
+      class="org.jpos.iso.IFA_LLLCHAR"/>
+ <isofield
+      id="125"
+      length="999"
+      name="ADITIONAL DATA 5"
+      class="org.jpos.iso.IFA_LLLCHAR"/>   
+                             
+</isopackager>

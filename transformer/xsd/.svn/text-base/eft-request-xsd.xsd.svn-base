@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0">
+
+    <xs:element name="eft-file">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="installation-parameters" type="installationType" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="user-parameters" type="userType" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="transactions" type="transactionsType" minOccurs="1" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="transactionsType">
+        <xs:sequence>
+            <xs:element name="transaction" type="transactionType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="installationType">
+        <xs:sequence>
+            <xs:element name="from" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="to" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="tape-serial-number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="generation-number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="userType">
+        <xs:sequence>
+            <xs:element name="user-code" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="service-type" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="short-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="first-sequence-number" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="generation-number" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="source-account-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="transactionType">
+        <xs:sequence>
+            <xs:element name="type" minOccurs="1" maxOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:NCName">
+                        <xs:enumeration value="credit"/>  
+                        <xs:enumeration value="debit"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="source-branch-code" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="source-account-number" type="xs:long" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="destination-branch-code" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="destination-account-number" type="xs:long" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="amount" type="xs:long" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="user-reference" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="account-name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

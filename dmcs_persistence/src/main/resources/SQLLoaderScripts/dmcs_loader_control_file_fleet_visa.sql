@@ -1,0 +1,179 @@
+
+-- Write Headers -------------------------------------------------------------------------------------------------------
+
+LOAD DATA
+APPEND
+INTO TABLE CSO_INPUT_FILE_CONTROLS
+WHEN (01:02) = '01'
+   (
+      FILE_REF_NUMBER      POSITION ( 03  : 32  ), 
+      SYSTEM_SEQ_NUMBER    POSITION ( 51  : 60  ),
+      OUTPUT_DATE          POSITION ( 11  : 19  ) DATE 'YYYYMMDD', 
+      ORIGINATING_MEMBER   POSITION ( 47  : 50  ),
+      SERVICE              POSITION ( 33  : 36  ),
+      SUB_SERVICE          POSITION ( 37  : 46  ),
+      NUMBER_OF_RECS       POSITION ( 61  : 71  ),
+      NUMBER_DEBITS        POSITION ( 72  : 82  ),
+      NUMBER_CREDITS       POSITION ( 83  : 93  ),
+      DEBIT_VALUE          POSITION ( 94  : 104 ),
+      CREDIT_VALUE         POSITION ( 105 : 115 ),
+      --REJECTED_DEBITS_RECS POSITION ( 116 : 126 ),
+      --REJECTED_CREDIT_RECS POSITION ( 127 : 137 ),
+      --REJECTED_DEBITS_VAL  POSITION ( 138 : 148 ),
+      --REJECTED_CREDIT_VAL  POSITION ( 149 : 159 ),
+      ODS_DATA_STATUS      CONSTANT '1',
+      IS_BILLED            CONSTANT 'Y',
+      IS_PRE_EXTRACTED     CONSTANT 'Y',
+      PROCESS_STATUS       POSITION ( 160 : 160 )
+   )
+INTO TABLE CSO_TRANSACTIONS
+WHEN (01:02) <> '-1' AND (01:02) <> '01' AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '00'
+  (
+    FILE_SYSTEM_SEQ_NUMBER POSITION (169 : 178),
+    SYSTEM_SEQ_NUMBER      POSITION (179 : 189),
+    TRANSACTION_CODE       POSITION ( 01 :  02),
+    CARD_TYPE              POSITION (222 : 223),
+    ACQUIRER_MEMBER        POSITION (210 : 215),
+    ISSUER_MEMBER          POSITION (216 : 221),
+    ISSUER_BIN             POSITION (5   : 10),
+    ACCOUNT_NUMBER         POSITION (5   : 20),
+    ACQUIRER_BIN           POSITION (28  : 33),
+    PROCESS_STATUS         POSITION (337 : 337),
+    TRANSACTION_AMOUNT     POSITION (77  : 88),
+    CASHBACK_PRESENT       CONSTANT 'N', --- ???
+    CASHBACK_AMOUNT        CONSTANT '0', --- ???
+    OUTPUT_FILENAME        POSITION (234 : 241),
+    BILLING_FEE            POSITION (242 : 252),
+    BILLING_FEE_AMOUNT     POSITION (253 : 263),
+    BILLING_VAT            POSITION (264 : 275),
+    CB_BILL_FEE            POSITION (275 : 285),
+    CB_BILL_FEE_AMNT       POSITION (286 : 296),
+    CB_BILL_VAT            POSITION (297 : 307),
+    EXTRACTIND             CONSTANT 'N',
+    RECORD_NUMBER          POSITION (224 : 233),
+    RECORD_START_BYTE      CONSTANT '0',
+    RECORD_END_BYTE        CONSTANT '0',
+    FILE_RECORD_CNT        CONSTANT '0',
+    FLEET_COUNT_TRAN       CONSTANT '0',
+    OPFILE_NUM_SEQ         CONSTANT '0',
+    --FLEET_SUB_PRODUCT      POSITION (378,380),
+    --FLEET_PRODUCTI         POSITION (380,381)
+    -- FILE_RECORD_CNT NUMBER(3, 0) DEFAULT 1  --- calculated
+
+ )
+ INTO TABLE CSO_PAYMENT_INSTRUCTIONS_VISA
+ WHEN (01:02) <> '-1' AND (01:02) <> '01' AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '00'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      SYSTEM_GEN_SEQ_NUMBER   POSITION (179 : 189),
+      INPUT_SEQ_NUMBER        POSITION (200 : 209),
+      INPUT_FILE_IDENTIFIER   CONSTANT 'I',
+      TRANSACTION_CODE        POSITION ( 01 :  02),
+      TRANSACTION_CODE_NUMBER POSITION ( 03 :  04),
+      ACCOUNT_NUMBER         POSITION( 5 : 20),
+      SERVICE                 POSITION (190 : 193),
+      SUB_SERVICE             POSITION (194 : 199),
+      CARD_TRANSACTION        POSITION ( 01 : 168),
+      CARD_TYPE               POSITION (222 : 223),
+      ACQUIRER_MEMBER         POSITION (210 : 215),
+      ISSUER_MEMBER           POSITION (216 : 221),
+      VISA_AMOUNT             POSITION (77  : 88), 
+      FILENAME_DESCRIPTION    POSITION (234 : 241),
+      POS_ENTRY_MODE          POSITION (308 : 309),
+      TERMINAL_CAPABILITY     POSITION (310 : 310),
+      CHIP_CARD               POSITION (311 : 311),
+      ECOMM_IND               POSITION (312 : 312),
+      CARD_PRESENT            POSITION (313 : 313),
+      CASHBACK_PURCHASE_AMNT  POSITION (325 : 335),
+      CASHBACK_PURCHASE       POSITION (336 : 336),
+      PROCESS_STATUS          POSITION (337 : 337),
+      FINANCIAL_INDICATOR     CONSTANT 'Y'
+ )
+ INTO TABLE CSO_PAYMENT_INSTRUCTIONS_VISA
+ WHEN (01:02) <> '-1' AND (01:02) <> '01'  AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '01'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      SYSTEM_GEN_SEQ_NUMBER   POSITION (179 : 189),
+      INPUT_SEQ_NUMBER        POSITION (200 : 209),
+      INPUT_FILE_IDENTIFIER   CONSTANT 'I',
+      TRANSACTION_CODE        POSITION ( 01 :  02),
+      TRANSACTION_CODE_NUMBER POSITION ( 03 :  04),
+      SERVICE                 POSITION (190 : 193),
+      SUB_SERVICE             POSITION (194 : 199),
+      CARD_TRANSACTION        POSITION ( 01 : 168),
+      FILENAME_DESCRIPTION    POSITION (234 : 241),
+      PROCESS_STATUS          POSITION (326 : 326),
+      FINANCIAL_INDICATOR     CONSTANT 'N',
+      CARD_TRANSACTION        POSITION ( 01 : 168)
+ )
+ INTO TABLE CSO_PAYMENT_INSTRUCTIONS_VISA
+ WHEN (01:02) <> '-1' AND (01:02) <> '01'  AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '03'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      SYSTEM_GEN_SEQ_NUMBER   POSITION (179 : 189),
+      INPUT_SEQ_NUMBER        POSITION (200 : 209),
+      INPUT_FILE_IDENTIFIER   CONSTANT 'I',
+      TRANSACTION_CODE        POSITION ( 01 :  02),
+      TRANSACTION_CODE_NUMBER POSITION ( 03 :  04),
+      SERVICE                 POSITION (190 : 193),
+      SUB_SERVICE             POSITION (194 : 199),
+      CARD_TRANSACTION        POSITION ( 01 : 168),
+      FILENAME_DESCRIPTION    POSITION (234 : 241),
+      PROCESS_STATUS          POSITION (326 : 326),
+      FINANCIAL_INDICATOR     CONSTANT 'N',
+      CARD_TRANSACTION        POSITION ( 01 : 168)
+ )
+ INTO TABLE CSO_PAYMENT_INSTRUCTIONS_VISA
+ WHEN (01:02) <> '-1' AND (01:02) <> '01'  AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '05'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      SYSTEM_GEN_SEQ_NUMBER   POSITION (179 : 189),
+      INPUT_SEQ_NUMBER        POSITION (200 : 209),
+      INPUT_FILE_IDENTIFIER   CONSTANT 'I',
+      TRANSACTION_CODE        POSITION ( 01 :  02),
+      TRANSACTION_CODE_NUMBER CONSTANT '5',
+      SERVICE                 POSITION (190 : 193),
+      SUB_SERVICE             POSITION (194 : 199),
+      CARD_TRANSACTION        POSITION ( 01 : 168),
+      FILENAME_DESCRIPTION    POSITION (234 : 241),
+      PROCESS_STATUS          POSITION (326 : 326),
+      FINANCIAL_INDICATOR     CONSTANT 'N',
+      CARD_TRANSACTION        POSITION ( 01 : 168)
+ )
+ INTO TABLE CSO_PAYMENT_INSTRUCTIONS_VISA
+ WHEN (01:02) <> '-1' AND (01:02) <> '01' AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '07'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      SYSTEM_GEN_SEQ_NUMBER   POSITION (179 : 189),
+      INPUT_SEQ_NUMBER        POSITION (200 : 209),
+      INPUT_FILE_IDENTIFIER   CONSTANT 'I',
+      TRANSACTION_CODE        POSITION ( 01 :  02),
+      TRANSACTION_CODE_NUMBER CONSTANT '7',
+      SERVICE                 POSITION (190 : 193),
+      SUB_SERVICE             POSITION (194 : 199),
+      CARD_TRANSACTION        POSITION ( 01 : 168),
+      FILENAME_DESCRIPTION    POSITION (234 : 241),
+      PROCESS_STATUS          POSITION (326 : 326),
+      FINANCIAL_INDICATOR     CONSTANT 'N',
+      CARD_TRANSACTION        POSITION ( 01 : 168)
+ )
+  INTO TABLE CSO_FLEET_BILLING
+ WHEN (01:02) <> '-1' AND (01:02) <> '01' AND (01:02) <> '92' AND (01:02) <> '98' AND (01:02) <> '99' AND (03:04) = '00'
+    (
+      FILE_REF_NUMBER         POSITION (169 : 178),
+      TRAN_SYSTEM_SEQ_NUMBER  POSITION (179 : 189),
+      TX_CNT		      CONSTANT '1',
+      SUB_PRODUCT	      CONSTANT '1',
+      PRODUCT                 CONSTANT '1',
+      CARD_TYPE		      POSITION (222 : 223),
+      SUB_SERVICE             POSITION (194 : 199),
+      SERVICE                 POSITION (190 : 193),
+      ACQ_REF_NO              CONSTANT '1',
+      TX_DATE_TIME            POSITION (340 : 359),
+      AMOUNT                  POSITION (77  : 88),
+      TX_CDE                  POSITION ( 01 :  02),
+      ACC_NO                  POSITION (5   : 20),
+      ACQ                     POSITION (210 : 215), 
+      ISS                     POSITION (216 : 221)
+)
+-- Write Transactions --------------------------------------------------------------------------------------------------

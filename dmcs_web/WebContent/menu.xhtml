@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <f:view contentType="text/html" id="fview">
+
+        <f:metadata>
+            <ui:insert name="metadata" />
+        </f:metadata>
+
+        <h:head>
+            <title>DMCS Home</title>
+        </h:head>
+        <h:body style="background-image:url('resources/images/background2.jpg');">
+            <p:layout fullPage="true">
+                <h:form id="menu">
+
+                    <p:growl for="service" sticky="true"  showDetail="true" modal="true"/>
+
+                    <p:menubar>
+                        <p:menuitem value="Home" outcome="landing" icon="ui-icon-home" />
+                        <p:submenu label="Maintenance">
+                            <p:submenu label="Operations">
+                                <p:menuitem value="Start Of Day(SOD)" outcome="startOfDay"></p:menuitem>
+                                <p:menuitem value="Request End Of Day(EOD)" outcome="endOfDay"></p:menuitem>
+                            </p:submenu>
+                            <p:submenu label="CSF Bins">
+                                <p:menuitem value="Create New Bin" outcome="createCsfBins"></p:menuitem>
+                                <p:menuitem value="Update Existing Bin" outcome="editCsfBins"></p:menuitem>
+                            </p:submenu>
+                            <p:submenu label="Program Controls">
+                                <p:menuitem value="View Program Controls" outcome="viewProgramControls"></p:menuitem>                        
+                            </p:submenu>
+                            <p:submenu label="Input / Output Enquiry">
+                                <p:menuitem value="View Input / Output" outcome="viewInputOutputEnquiry"></p:menuitem>                        
+                            </p:submenu>
+                            <p:submenu label="Reports">
+                                <p:menuitem value="CSR024 Reports" outcome="csr024Reports"></p:menuitem>                        
+                            </p:submenu>
+                        </p:submenu>
+                        <p:menuitem value="Help" icon="ui-icon-help" />
+                    </p:menubar>
+                </h:form>
+            </p:layout>
+        </h:body>
+    </f:view>        
+</html>

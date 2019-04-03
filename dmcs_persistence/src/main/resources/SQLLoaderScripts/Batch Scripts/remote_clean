@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+log_user 0
+spawn ssh cccops@ipaddress \
+  rm -rf \
+    /ccc01/home/cccops/tana54/ccc/sqlidx/* \
+    /ccc01/home/cccops/tana54/ccc/sqllog/* \
+    /ccc01/home/cccops/tana54/ccc/sqlbad/* 
+expect "Password: "
+send "opsccc\r"
+interact

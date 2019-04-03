@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml
+END
+TransactionsType.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/TransactionsType.java
+END
+EftFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/EftFile.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/ObjectFactory.java
+END
+TransactionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/TransactionType.java
+END
+UserType.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/UserType.java
+END
+InstallationType.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/prod/!svn/ver/6866/BankservAfrica/ReportManager/Java/backend/trunk/Transformer/src/za/co/bsv/bend/transformer/eft/xml/InstallationType.java
+END

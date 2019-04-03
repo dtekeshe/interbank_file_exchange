@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a="http://java.sun.com/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+    <title>Please Login</title>
+  </h:head>
+  <h:body style="background-image:url('resources/images/background2.jpg');">
+  <h:outputStylesheet library="css" name="style.css"/>
+   
+  <p:growl id="growl" sticky="true" showsDetail="true"/>
+  	<h:graphicImage value="/resources/images/logo.png" />
+   
+  <h:form>
+   <h:panelGrid columns="2" style="position: absolute; top: 250px; left:500px;">
+
+    		<h:outputText for="button" value="Username" />
+    		<p:inputText id="button" value="#{loginController.username}"/>
+    		
+    		<h:outputText for="button1" value="Password" />
+    		<p:password id="button1" value="#{loginController.password}"/>
+         
+           <h:outputText for="button2" value="       " />
+    		<p:commandButton id="button2" value="Login" action="#{loginController.login()}" style="text-align:center"/>
+          </h:panelGrid>
+  </h:form>
+ </h:body>
+</html>

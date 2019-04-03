@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util
+END
+EFTTransactionBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/EFTTransactionBuilder.java
+END
+UserDataSetBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/UserDataSetBuilder.java
+END
+EFTFileBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/EFTFileBuilder.java
+END
+TransactionSetBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/TransactionSetBuilder.java
+END
+InstallationHeaderBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/InstallationHeaderBuilder.java
+END
+UserHeaderBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/UserHeaderBuilder.java
+END
+EFTFileUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/prod/!svn/ver/8049/MTS/Core/Java/backend/trunk/EFTFileUtil/src/za/co/bsv/util/eft/util/EFTFileUtil.java
+END

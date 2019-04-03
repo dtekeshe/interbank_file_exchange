@@ -1,0 +1,16 @@
+za\co\bsv\util\eft\dto\TransactionSetDTO.class
+za\co\bsv\util\eft\util\EFTFileUtil.class
+za\co\bsv\util\eft\util\EFTTransactionBuilder.class
+za\co\bsv\util\eft\dto\EFTTransactionDTO.class
+za\co\bsv\util\eft\dto\InstallationTrailerDTO.class
+za\co\bsv\util\eft\util\InstallationHeaderBuilder.class
+za\co\bsv\util\eft\util\TransactionSetBuilder.class
+za\co\bsv\util\eft\util\UserHeaderBuilder.class
+za\co\bsv\util\eft\dto\InstallationHeaderDTO.class
+za\co\bsv\util\eft\dto\UserDataSetDTO.class
+za\co\bsv\util\eft\util\EFTFileBuilder.class
+za\co\bsv\util\eft\dto\ContraRecordDTO.class
+za\co\bsv\util\eft\dto\UserTrailerDTO.class
+za\co\bsv\util\eft\dto\UserHeaderDTO.class
+za\co\bsv\util\eft\dto\EFTFileDTO.class
+za\co\bsv\util\eft\util\UserDataSetBuilder.class

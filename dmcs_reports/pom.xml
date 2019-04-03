@@ -1,0 +1,90 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>DMCS_Reports</groupId>
+	<artifactId>DMCS_Reports</artifactId>
+	<version>release_1.0.0</version>
+	<build>
+		<resources>
+			<resource>
+				<directory>${basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+		<dependency>
+			<groupId>Transformer</groupId>
+			<artifactId>Transformer</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+        
+		<dependency>
+			<groupId>DCMS_Commons</groupId>
+			<artifactId>DCMS_Commons</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-core -->
+		<!-- <dependency> <groupId>com.sun.xml.bind</groupId> <artifactId>jaxb-core</artifactId> 
+			<version>2.2.11</version> <scope>provided</scope> </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl -->
+		<!-- <dependency> <groupId>com.sun.xml.bind</groupId> <artifactId>jaxb-impl</artifactId> 
+			<version>2.2.11</version> <scope>provided</scope> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/jaxb/jsr173_api -->
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-css -->
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>batik-css</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jaxb</groupId>
+			<artifactId>jsr173_api</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>ReportCreator</groupId>
+			<artifactId>ReportCreator</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>EFTFileUtil</groupId>
+			<artifactId>EFTFileUtil</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>XML2TextTransformer</groupId>
+			<artifactId>XML2TextTransformer</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

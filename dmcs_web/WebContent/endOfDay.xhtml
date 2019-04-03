@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>DMCS End Of Day</title>
+    </h:head> 
+
+    <ui:composition template="template.xhtml">
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+
+            <h:body style="background-image:url('resources/images/background2.jpg')">
+                <h:outputStylesheet library="css" name="style.css" />
+                <h:graphicImage value="/resources/images/logo.png" />
+                <p:growl id="growl" sticky="true" showsDetail="true"/>
+
+                <h:form>
+                    <p:panel>
+                        <h:panelGrid columns="3">
+                            <p:outputLabel value="Select Sub Service to Close : "/>
+                            <p:selectOneMenu id="binsCombo" value="#{endOfDayController.selectedItem}" 
+                                             valueChangeListener="#{endOfDayController.subServiceChanged}" onchange="submit();" >
+                                <f:selectItems value="#{endOfDayController.subServiceSelectItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>  
+                            <p:commandButton id="button2" value="Request Close for Sub Service" action="#{endOfDayController.executeEOD()}" style="text-align:center"/>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p></p>                    
+                </h:form>
+
+                <h:form>
+                    <p:panel>
+                        <h:panelGrid columns="1" style="position: absolute; top: 250px; left:500px;">                      
+                            
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </h:body> 
+        </ui:define>
+    </ui:composition>
+</html>

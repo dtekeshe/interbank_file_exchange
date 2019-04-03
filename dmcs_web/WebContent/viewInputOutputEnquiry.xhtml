@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>View Program Controls</title>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+    </h:head>
+
+    <ui:composition template="template.xhtml">
+
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+
+            <h:body style="background-image:url('resources/images/background2.jpg');">
+                <h:outputStylesheet library="css" name="style.css"/>
+                <p:growl id="growl" sticky="true" showsDetail="true"/>
+
+                <h:graphicImage value="/resources/images/logo.png" />
+                <h2>Input / Output File Controls View </h2>
+
+                <h:form>
+
+
+                    <p:panel>
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Select Control Type :"/>
+                            <p:selectOneMenu id="controlsCombo" value="#{z1Z9InputOutputController.selectedControl}" 
+                                             valueChangeListener="#{z1Z9InputOutputController.controlChanged}" onchange="submit();" >
+                                <f:selectItems value="#{z1Z9InputOutputController.controlSelectedItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p></p>   
+
+                    <p:panel>
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Select Sub Service :"/>
+                            <p:selectOneMenu id="binsCombo" value="#{z1Z9InputOutputController.selectedItem}" 
+                                             valueChangeListener="#{z1Z9InputOutputController.subServiceChanged}" onchange="submit();" >
+                                <f:selectItems value="#{z1Z9InputOutputController.subServiceSelectItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                    </p:panel>
+                    <p></p>                    
+                    
+                    <p:panel toggleable="true" visible="#{z1Z9InputOutputController.inputControlSelected}">
+                        <h2>Input File Controls View </h2>
+                        <p:dataTable var="infile" value="#{z1Z9InputOutputController.controlsViewList}" 
+                          paginator="true" rows="10"
+                     paginatorTemplate=
+                             "{RowsPerPageDropdown} {FirstPageLink}
+                             {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     rowsPerPageTemplate="5,10,15" lazy="true" rowHover="true" rowSelectMode="single" scrollable="true">
+                            <p:column headerText="FILE REF NUMBER">
+                                <h:outputText value="#{infile.fileRefNumber}" />
+                            </p:column>
+                            <p:column headerText="SUB SERVICE">
+                                <h:outputText value="#{infile.subService}" />
+                            </p:column>
+                            <p:column headerText="PROCESS STATUS">
+                                <h:outputText value="#{infile.processStatus}" />
+                            </p:column>
+                            <p:column headerText="BILLED">
+                                <h:outputText value="#{infile.billed}" />
+                            </p:column>
+                            <p:column headerText="PRE-EXTRACTED">
+                                <h:outputText value="#{infile.preExtracted}" />
+                            </p:column>
+                            <p:column headerText="NUMBRR OF CREDITS">
+                                <h:outputText value="#{infile.numberCredits}" />
+                            </p:column>
+                            <p:column headerText="NUMBER OF DEBITS">
+                                <h:outputText value="#{ibfile.numberDebits}" />
+                            </p:column>
+                            <p:column headerText="NUMBER OF RECORDS">
+                                <h:outputText value="#{infile.numberOfRecs}" />
+                            </p:column>
+                            <p:column headerText="CREDIT VALUE">
+                                <h:outputText value="#{infile.creditValue}" />
+                            </p:column>
+                            <p:column headerText="DEBIT VALUE">
+                                <h:outputText value="#{infile.debitValue}" />
+                            </p:column>
+                            <p:column headerText="NEGATIVE CARD COUNT">
+                                <h:outputText value="#{infile.negativeCardCount}" />
+                            </p:column>
+                            <p:column headerText="OROGINATING MEMBER">
+                                <h:outputText value="#{infile.originatingMember}" />
+                            </p:column>
+                            <p:column headerText="SYSTEM SEQ NUMBER">
+                                <h:outputText value="#{infile.systemSeqNumber}" />
+                            </p:column>
+                        </p:dataTable>
+                    </p:panel>  
+
+                    <p></p>                                        
+
+                    <p:panel toggleable="true" visible="#{z1Z9InputOutputController.outputControlSelected}">
+                        <h2>Output File Controls View </h2>
+                        <p:dataTable var="outfile" value="#{z1Z9InputOutputController.outputControlsViewList}" 
+                             paginator="true" rows="10"
+                             paginatorTemplate=
+                             "{RowsPerPageDropdown} {FirstPageLink}
+                             {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                   			  rowsPerPageTemplate="5,10,15" lazy="true" rowHover="true" rowSelectMode="single" scrollable="true">
+                            <p:column headerText="FILENAME DESCRIPTION">
+                                <h:outputText value="#{outfile.filenameDescription}" />
+                            </p:column>
+                            <p:column headerText="SUB SERVICE">
+                                <h:outputText value="#{outfile.subService}" />
+                            </p:column>
+                            <p:column headerText="FULL FILE INDICATOR">
+                                <h:outputText value="#{outfile.fullFileInd}" />
+                            </p:column>
+                            <p:column headerText="LAST FILE INDICATOR">
+                                <h:outputText value="#{outfile.lastFileIndicator}" />
+                            </p:column>
+                            <p:column headerText="BANK CODE">
+                                <h:outputText value="#{outfile.bankCode}" />
+                            </p:column>
+                            <p:column headerText="CREDIT VALUE">
+                                <h:outputText value="#{outfile.crValue}" />
+                            </p:column>
+                            <p:column headerText="CREDIT VOLUME">
+                                <h:outputText value="#{outfile.crVolume}" />
+                            </p:column>
+                            <p:column headerText="DISTRIBUTION CODE">
+                                <h:outputText value="#{outfile.distributionCode}" />
+                            </p:column>
+                            <p:column headerText="DEBIT VALUE">
+                                <h:outputText value="#{outfile.drValue}" />
+                            </p:column>
+                            <p:column headerText="DEBIT VOLUME">
+                                <h:outputText value="#{outfile.drVolume}" />
+                            </p:column>
+                            <p:column headerText="HASH TOTAL 98">
+                                <h:outputText value="#{outfile.hashTotal98}" />
+                            </p:column>
+                            <p:column headerText="HASH TOTAL 99">
+                                <h:outputText value="#{outfile.hashTotal99}" />
+                            </p:column>
+                            <p:column headerText="NEGATIVE CARD COUNT">
+                                <h:outputText value="#{outfile.negCardCount}" />
+                            </p:column>
+                            <p:column headerText="ORIGINATING BANK ID">
+                                <h:outputText value="#{outfile.originatingBankId}" />
+                            </p:column>
+                            <p:column headerText="OROGINATING MEMBER">
+                                <h:outputText value="#{outfile.originatingMember}" />
+                            </p:column>
+                            <p:column headerText="RECORD COUNT">
+                                <h:outputText value="#{outfile.recordCount}" />
+                            </p:column>
+                            <p:column headerText="SEQUENCE NUMBER">
+                                <h:outputText value="#{outfile.seqNumber}" />
+                            </p:column>
+                            <p:column headerText="STATUS CODE">
+                                <h:outputText value="#{outfile.statusCode}" />
+                            </p:column>
+                        </p:dataTable>
+                    </p:panel>   
+
+                </h:form>
+            </h:body>
+
+        </ui:define>
+    </ui:composition>
+</html>
+

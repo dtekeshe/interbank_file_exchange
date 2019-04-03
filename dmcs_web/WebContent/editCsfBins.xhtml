@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>Edit CsfBins</title>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+    </h:head>
+
+    <ui:composition template="template.xhtml">
+
+        <ui:define name="metadata">
+        </ui:define>
+        <ui:define name="content">
+
+            <h:body style="background-image:url('resources/images/background2.jpg');">
+                <h:outputStylesheet library="css" name="style.css"/>
+                <p:growl id="growl" sticky="true" showsDetail="true"/>
+
+                <h2>Edit Bin</h2>
+                <h:form id="selectForm">
+                    <p:panel>
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Select BIN to Modify:"/>
+                            <p:selectOneMenu id="binsCombo" value="#{csfBinsController.selectedItem}" 
+                                             valueChangeListener="#{csfBinsController.binChanged}" onchange="submit();" >
+                                <f:selectItems value="#{csfBinsController.binSelectItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>     
+                <h:form id="updateForm">
+                    <h:panelGrid id="binGrid" columns="2">
+                        <h:panelGrid columns="2">
+                            <p:outputLabel value="Bin No:"/>
+                            <p:inputText value="#{csfBinsController.csfBinsDTO.binNo}" title="BinNo" />
+                            <p:outputLabel value="Bank Description:"/>
+                            <!--<p:inputText value="#{csfBinsController.csfBinsDTO.bankCode}" title="Bank Code" />-->
+                            <p:selectOneMenu id="membersCombo" value="#{csfBinsController.csfBinsDTO.bankCode}">
+                                <f:selectItems value="#{csfBinsController.memberSelectItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Bin Description:"/>
+                            <p:inputText id="binDescription" value="#{csfBinsController.csfBinsDTO.binDescription}" title="BinDescription" />
+
+                            <p:outputLabel value="Card Type:"/>                           
+                            <p:selectOneMenu id="cardTypesCombo" value="#{csfBinsController.csfBinsDTO.cardType}">
+                                <f:selectItems value="#{csfBinsController.cardTypesSelectItems.entrySet()}" var="entry" 
+                                               itemValue="#{entry.key}" itemLabel="#{entry.value}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Limit 1:"/>
+                            <p:inputText id="limit1" value="#{csfBinsController.csfBinsDTO.limit1}" title="Limit1" />
+                            <p:outputLabel value="Limit 2:"/>
+                            <p:inputText id="limit2" value="#{csfBinsController.csfBinsDTO.limit2}" title="Limit2" />
+                            <p:outputLabel value="Floor Limit:"/>
+                            <p:inputText id="floorLimit" value="#{csfBinsController.csfBinsDTO.floorLimit}" title="FloorLimit" />
+                            <p:outputLabel value="Routing:"/>
+                            <p:inputText id="routing" value="#{csfBinsController.csfBinsDTO.routing}" title="Routing" />
+                            <!--<p:outputLabel value="Created By:"/>
+                            <p:inputText id="createdBy" value="#{csfBinsController.csfBinsDTO.createdBy}" title="CreatedBy" />
+                            <p:outputLabel value="Created Date (MM/dd/yyyy HH:mm:ss):"/>
+                            <p:calendar id="createdDate" value="#{csfBinsController.csfBinsDTO.createdDate}" title="CreatedDate" showOn="button" >
+                            </p:calendar>-->
+                        </h:panelGrid>
+                        <h:panelGrid columns="2">                  
+                            <!--<p:outputLabel value="ModifiedBy:"/>
+                            <p:inputText id="modifiedBy" value="#{csfBinsDTO.modifiedBy}" title="ModifiedBy" />
+                            <p:outputLabel value="ModifiedDate (MM/dd/yyyy HH:mm:ss):"/>
+                            <p:calendar id="modifiedDate" value="#{csfBinsDTO.modifiedDate}" title="ModifiedDate" showOn="button" >
+                            </p:calendar>
+                            <p:outputLabel value="SubService:"/>
+                            <p:inputText id="subService" value="#{csfBinsDTO.subService}" title="SubService" />-->
+                            <p:outputLabel value="First Deletion Date (MM/dd/yyyy HH:mm:ss):"/>
+                            <p:calendar id="firstDeletionDate" value="#{csfBinsController.csfBinsDTO.firstDeletionDate}" title="FirstDeletionDate" showOn="button" >
+                            </p:calendar>
+                            <p:outputLabel value="Days Before First Deletion Date:"/>
+                            <p:inputText id="daysBeforefirstDeletionDate" value="#{csfBinsController.csfBinsDTO.daysBeforeFirstDeletionDate}" title="DaysBeforefirstDeletionDate" />
+                            <p:outputLabel value="Final Deletion Date (MM/dd/yyyy HH:mm:ss):"/>
+                            <p:calendar id="finalDeletionDate" value="#{csfBinsController.csfBinsDTO.finalDeletionDate}" title="FinalDeletionDate" showOn="button" >
+                            </p:calendar>
+                            <p:outputLabel value="Days Before Final Deletion Date:"/>
+                            <p:inputText id="daysBeforefinalDeletionDate" value="#{csfBinsController.csfBinsDTO.daysBeforeFinalDeletionDate}" title="DaysBeforefinalDeletionDate" />
+                            <p:outputLabel value="Active Indicator:"/>
+                            <p:inputText id="activeInd" value="#{csfBinsController.csfBinsDTO.activeInd}" title="ActiveInd" />
+                            <p:outputLabel value="Acquirer / Issuer / Both:"/>
+                            <p:inputText id="acqIssBoth" value="#{csfBinsController.csfBinsDTO.acqIssBoth}" title="AcqIssBoth" required="true" requiredMessage="The acqIssBoth field is required." />                    
+                            <br />
+                            <br />
+                            <p:commandButton action="#{csfBinsController.create}" value="Update" onclick="submit();" process="@this,updateForm" />
+                        </h:panelGrid>
+                    </h:panelGrid>                    
+                </h:form>
+            </h:body>   
+        </ui:define>
+    </ui:composition>
+</html>

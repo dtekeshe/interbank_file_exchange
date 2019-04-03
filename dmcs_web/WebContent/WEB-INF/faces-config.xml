@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0"> 
+    <managed-bean>
+        <managed-bean-name>csfBinsDTO</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.dto.CsfBinsDTO</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean> 
+    
+    <managed-bean>
+        <managed-bean-name>z1Z9InputOutputController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.Z1Z9InputOutputController</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>   
+    
+    <managed-bean>
+        <managed-bean-name>spologController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.SpologController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>endOfDayController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.EndOfDayController</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>     
+                
+    <managed-bean>
+        <managed-bean-name>csoProgramControlsDTO</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.dto.CSOProgramControlsDTO</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean> 
+    <managed-bean>
+        <managed-bean-name>csfBinsController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.CsfBinsController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>csoProgramControlsController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.CsoProgramControlsController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>loginController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.LoginController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>           
+    </managed-bean>
+    
+    
+    <managed-bean>
+        <managed-bean-name>cSR024ReportController</managed-bean-name>
+        <managed-bean-class>com.bsva.front.dmcs.controllers.CSR024ReportController</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean> 
+      
+    <!-- <navigation-rule>
+        <navigation-case>
+            <from-action>#{startOfDayController.executeSOD}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>startOfDay.xhtml</to-view-id>
+        </navigation-case>
+                <navigation-case>
+            <from-action>#{startOfDayController.executeSOD}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>landing.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>  -->
+     <navigation-rule>
+   		 <from-view-id>/startOfDay.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{startOfDayController.executeSOD}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/startOfDay.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+</faces-config>

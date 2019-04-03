@@ -1,0 +1,98 @@
+USE CCCOWNER;
+CREATE OR REPLACE VIEW CCCOWNER.CSV_TRANSACTIONS_VIEW_COLLATED
+(
+    ACQUIRER_MEMBER,
+    ISSUER_MEMBER,
+    SERVICE,
+    CARD_TYPE,
+    TRANSACTION_CODE,
+    DEST_REPORT,
+    VOLUME,
+    AMOUNT_DIRECTION,
+    TRAN_VALUE,
+    BILLING_FEE,
+    BILLING_FEE_AMOUNT,
+    BILLING_VAT
+)
+AS
+    SELECT
+        CASE
+            WHEN DEST_REPORT = 'A' THEN ACQUIRER_MEMBER
+            ELSE ISSUER_MEMBER
+        END
+            AS ACQUIRER_MEMBER,
+        CASE
+            WHEN DEST_REPORT = 'A' THEN ISSUER_MEMBER
+            ELSE ACQUIRER_MEMBER
+        END
+            AS ISSUER_MEMBER,
+        SERVICE,
+        CARD_TYPE,
+        CASE
+            WHEN CARD_TYPE = 6 AND FLEET_COUNT_TRAN = 'Y'
+            THEN
+               1
+            WHEN CARD_TYPE <> 6
+            THEN
+               1
+            ELSE
+               0
+        END
+            AS VOLUME,
+        CASE
+            WHEN TRANSACTION_CODE = 3 THEN 8
+            WHEN TRANSACTION_CODE = 13 THEN 18
+            WHEN TRANSACTION_CODE = 23 THEN 28
+        END
+            AS TRANSACTION_CODE,
+        AMOUNT_DIRECTION,
+        IFNULL (CASHBACK_AMOUNT, 0) AS TRANSACTION_AMNT,
+        IFNULL (CB_BILL_FEE, 0) AS BILLING_FEE,
+        IFNULL (CB_BILL_FEE_AMNT, 0) AS BILLING_FEE_AMOUNT,
+        IFNULL (CB_BILL_VAT, 0) AS BILLING_VAT,
+        DEST_REPORT
+    FROM CSV_TRANSACTIONS_VIEW
+   WHERE     TRANSACTION_CODE IN (3, 13, 23)
+         AND TRAN_STATUS = 'C'
+         AND (FILE_STATUS = 'A' OR FILE_STATUS = 'E')
+  UNION ALL
+  SELECT CASE
+            WHEN DEST_REPORT = 'A' THEN ACQUIRER_MEMBER
+            ELSE ISSUER_MEMBER
+         END
+            AS ACQUIRER_MEMBER,
+         CASE
+            WHEN DEST_REPORT = 'A' THEN ISSUER_MEMBER
+            ELSE ACQUIRER_MEMBER
+         END
+            AS ISSUER_MEMBER,
+         SERVICE,
+         CARD_TYPE,
+         CASE
+            WHEN CARD_TYPE = 6 AND FLEET_COUNT_TRAN = 'Y'
+            THEN
+               1
+            WHEN CARD_TYPE <> 6
+            THEN
+               1
+            ELSE
+               0
+         END
+            AS VOLUME,
+         CASE
+            WHEN TRANSACTION_CODE = 9 THEN 5
+            WHEN TRANSACTION_CODE = 19 THEN 15
+            WHEN TRANSACTION_CODE = 29 THEN 25
+            ELSE TRANSACTION_CODE
+         END
+            AS TRANSACTION_CODE,
+         AMOUNT_DIRECTION,
+         IFNULL (TRAN_AMOUNT, 0) AS TRANSACTION_AMNT,
+         IFNULL (BILLING_FEE, 0) AS BILLING_FEE,
+         IFNULL (BILLING_FEE_AMOUNT, 0) AS BILLING_FEE_AMOUNT,
+         IFNULL (BILLING_VAT, 0) AS BILLING_VAT,
+         IFNULL (DEST_REPORT, 0) AS DEST_REPORT
+    FROM CSV_TRANSACTIONS_VIEW
+   WHERE     TRANSACTION_CODE < 40
+         AND TRAN_STATUS = 'C'
+         AND (FILE_STATUS = 'A' OR FILE_STATUS = 'E')

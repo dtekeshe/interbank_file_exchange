@@ -1,0 +1,33 @@
+#!/usr/bin/expect -f
+set configFile [lindex $argv 0]
+set dataFile [lindex $argv 1]
+set subServiceID [lindex $argv 2]
+set mci "MASTERCARD"
+set negative_file /tana54/ccc/sqlidx/$dataFile.negative.idx
+log_user 0
+spawn scp -p /tana54/ccc/sqlidx/$dataFile.idx \
+cccops@ipaddress:/ccc01/home/cccops/tana54/ccc/sqlidx/
+expect "Password: "
+send "opsccc\r"
+interact
+wait $!
+log_user 0
+spawn ssh cccops@ipaddress \
+  /home/oradba/oracle/product/11.2.0.1/bin/sqlldr \
+    CONTROL=/ccc01/home/cccops/tana54/ccc/sqlctl/$configFile \
+    DATA=/ccc01/home/cccops/tana54/ccc/sqlidx/$dataFile.idx \
+    LOG=/ccc01/home/cccops/tana54/ccc/sqllog/$dataFile.log \
+    BAD=/ccc01/home/cccops/tana54/ccc/sqlbad/$dataFile.bad \
+    USERID=CCCOWNER/cccowner@ipaddress/cccd \
+    bindsize=512000 rows=1024 
+expect "Password: "
+send "opsccc\r"
+interact
+#wait $!
+#log_user 0
+#spawn ssh cccops@ipaddress \
+#  rm -rf /ccc01/home/cccops/tana54/ccc/sqlidx/$dataFile.* 
+#expect "Password: "
+#send "opsccc\r"
+#interact
+#interact

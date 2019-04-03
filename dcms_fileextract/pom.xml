@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>dmcs_fileExtract</groupId>
+	<artifactId>dmcs_fileExtract</artifactId>
+	<packaging>jar</packaging>
+	<version>release_1.0.0</version>
+	<name>dmcs_fileExtract</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2</version>
+		</dependency>
+		 <dependency>
+            <groupId>org.beanio</groupId>
+            <artifactId>beanio</artifactId>
+            <version>2.1.0.M1</version>
+        </dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>DCMS_Commons</groupId>
+			<artifactId>DCMS_Commons</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>DMCS_ProcessController</groupId>
+			<artifactId>DMCS_ProcessController</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>DMCS_Reports</groupId>
+			<artifactId>DMCS_Reports</artifactId>
+			<version>release_1.0.0</version>
+		</dependency>
+		<!-- JUNIT -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency> 
+	</dependencies>
+	<build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
