@@ -1,0 +1,167 @@
+       01  F1R2-MCRD-LAYOUT.
+         03 DISP1.
+           05  F1R2-MCRD-RECORD-ID                 PIC 9(02).
+           05  F1R2-MCRD-ITEM-SEQ                  PIC 9(06).
+           05  F1R2-MCRD-SERVICE                   PIC X(04).
+           05  F1R2-MCRD-SUB-SERVICE               PIC X(10).
+         03 DISP2.
+           05  F1R2-MCRD-PRIMARY-BITMAP            PIC X(64).
+         03 DISP3.
+           05  F1R2-MCRD-SECONDARY-BITMAP          PIC X(64).
+         03 DISP4.
+           05  F1R2-MCRD-MT-IND.
+               10  F1R2-MCRD-MTI                   PIC 9(04).
+           05  F1R2-MCRD-P-2-PAN-LEN               PIC 9(02).
+           05  F1R2-MCRD-P-2-PAN                   PIC X(19).
+           05  F1R2-MCRD-P-3-PROCESS-CODE.
+               10  F1R2-MCRD-P-3-TRAN-CODE         PIC 9(02).
+               10  FILLER                          PIC 9(04).
+         03 DISP5.
+           05  F1R2-MCRD-P-4-TRANS-AMOUNT          PIC 9(12).
+           05  F1R2-MCRD-P-5-RECON-AMOUNT          PIC 9(12).
+           05  F1R2-MCRD-P-6-CARD-BILL             PIC 9(12).
+           05  F1R2-MCRD-P-7-TRAN-DATETIME         PIC 9(10).
+           05  F1R2-MCRD-P-8-ICCR-AMOUNT           PIC 9(08).
+           05  F1R2-MCRD-P-9-CONV-RATE             PIC 9(08).
+           05  F1R2-MCRD-P-10-CARD-CONV-RATE       PIC 9(08).
+         03 DISP6.
+           05  F1R2-MCRD-P-11-SYS-AUDIT            PIC 9(06).
+           05  F1R2-MCRD-P-12-LOCAL-DATE           PIC 9(06).
+           05  F1R2-MCRD-P-13-LOCAL-TIME           PIC 9(06).
+           05  F1R2-MCRD-P-14-EXP-DATE             PIC 9(04).
+           05  F1R2-MCRD-P-15-SETTLE-DATE          PIC 9(04).
+           05  F1R2-MCRD-P-16-CONV-DATE            PIC 9(04).
+           05  F1R2-MCRD-P-17-CAPTURE-DATE         PIC 9(04).
+           05  F1R2-MCRD-P-18-MERCH-TYPE           PIC 9(04).
+           05  F1R2-MCRD-P-19-ACQ-BANK-CODE        PIC 9(03).
+           05  F1R2-MCRD-P-20-COUNTRY-CODE         PIC 9(03).
+           05  F1R2-MCRD-P-21-FWD-CNT-CODE         PIC 9(03).
+           05  F1R2-MCRD-P-22-POS-DATA             PIC X(12).
+           05  F1R2-MCRD-P-23-CARD-SEQ-NO          PIC 9(03).
+           05  F1R2-MCRD-P-24-FUNC-CODE            PIC 9(03).
+           05  F1R2-MCRD-P-25-MESS-RSN-CDE-X.
+               10  F1R2-MCRD-P-25-MESS-RSN-CDE     PIC 9(04).
+           05  F1R2-MCRD-P-26-CARD-ACCEPTOR        PIC 9(04).
+           05  F1R2-MCRD-P-27-AUTH-ID-LEN          PIC 9(01).
+         03 DISP7.
+           05  F1R2-MCRD-P-28-TRAN-FEE-AMT         PIC 9(08).
+           05  F1R2-MCRD-P-29-SETL-FEE-AMT         PIC 9(08).
+           05  F1R2-MCRD-P-30-ORIG-AMT-X.
+V61 I          10  F1R2-MCRD-P-30-ORIG-AMT1-6      PIC 9(12).
+V61 I          10  F1R2-MCRD-P-30-ORIG-AMOUNT      PIC 9(12).
+           05  F1R2-MCRD-P-31-ACQ-REF-LEN          PIC 9(02).
+           05  F1R2-MCRD-P-31-ACQ-REF-DATA.
+               10  F1R2-MCRD-P-31-FORMAT-CD        PIC 9(01).
+               10  F1R2-MCRD-P-31-BIN-CODE         PIC 9(06).
+               10  F1R2-MCRD-P-31-FILLER           PIC 9(16).
+           05  F1R2-MCRD-P-32-ACQ-INST-LEN         PIC 9(02).
+           05  F1R2-MCRD-P-32-ACQ-INST-CDE         PIC 9(11).
+         03 DISP8.
+           05  F1R2-MCRD-P-33-FWD-INST-LEN         PIC 9(02).
+           05  F1R2-MCRD-P-33-FWD-INST-CDE         PIC X(11).
+           05  F1R2-MCRD-P-34-EXT-ACC-NUMBER       PIC X(28).
+           05  F1R2-MCRD-P-35-TRACK-2-DATA         PIC X(37).
+         03 DISP9.
+           05  F1R2-MCRD-P-36-TRACK-3-DATA         PIC X(44).
+           05  F1R2-MCRD-P-37-RET-REF-NO           PIC X(12).
+V81 C      05  F1R2-MCRD-P-38-APPR-CODE            PIC X(06).
+           05  F1R2-MCRD-P-39-RESPONSE-CODE        PIC X(02).
+           05  F1R2-MCRD-P-40-SERVICE-CODE         PIC 9(03).
+           05  F1R2-MCRD-P-41-CARD-TERM-ID         PIC X(08).
+         03 DISP10.
+           05  F1R2-MCRD-P-42-CARD-ACC-ID          PIC X(15).
+
+           05  F1R2-MCRD-P-43-CARD-ACC-LEN         PIC 9(02).
+         03 DISP11.
+           05  F1R2-MCRD-P-43-CRD-ACC-NAME         PIC X(99).
+         03 DISP12.
+           05  F1R2-MCRD-P-44-ADD-RES-DATA         PIC X(27).
+         03 DISP13.
+           05  F1R2-MCRD-P-45-TRK-1-DATA           PIC X(76).
+         03 DISP14.
+           05  F1R2-MCRD-P-46-ADD-DATA-ISO         PIC X(20).
+           05  F1R2-MCRD-P-47-ADD-DATA-INT         PIC X(20).
+           05  F1R2-MCRD-P-48-ADD-DATA-LEN         PIC 9(03).
+         03 DISP15.
+V57        05  F1R2-MCRD-P-48-ADD-DATA             PIC X(250).
+         03 DISP16.
+           05  F1R2-MCRD-P-49-CURR-CODE            PIC 9(03).
+           05  F1R2-MCRD-P-50-RECON-CURR           PIC 9(03).
+           05  F1R2-MCRD-P-51-CH-BILL-CC           PIC 9(03).
+           05  F1R2-MCRD-P-52-PIN                  PIC X(16).
+           05  F1R2-MCRD-P-53-SRC-INFO             PIC 9(16).
+V90 C      05  F1R2-MCRD-P-54-ADD-AMTS-TOT         PIC X(23).
+V95 C      05  F1R2-MCRD-P-55-ICC-LEN              PIC 9(03).
+V95 C    03 DISP17.
+V95 C      05  F1R2-MCRD-P-55-ICC-SYS-DATA         PIC X(255).
+         03 DISP18.
+           05  F1R2-MCRD-P-62-ADD-LEN              PIC 9(03).
+           05  F1R2-MCRD-P-62-ADD-DATA2            PIC X(43).
+           05  F1R2-MCRD-P-63-TRAN-LIFE            PIC X(19).
+           05  F1R2-MCRD-P-64-PMA-CODE             PIC X(16).
+         03 DISP19.
+           05  F1R2-MCRD-P-66-SET-CODE             PIC X(01).
+           05  F1R2-MCRD-P-67-EXT-PCODE            PIC 9(02).
+           05  F1R2-MCRD-P-68-REC-INST             PIC 9(03).
+           05  F1R2-MCRD-P-69-SET-INST             PIC 9(03).
+           05  F1R2-MCRD-P-70-NMI-CODE             PIC 9(03).
+           05  F1R2-MCRD-P-71-MESSAGE-NO           PIC 9(08).
+           05  F1R2-MCRD-P-72-DATA-LEN             PIC 9(03).
+           05  F1R2-MCRD-P-72-DATA-REC             PIC X(100).
+           05  F1R2-MCRD-P-73-ACTION-DTE           PIC 9(06).
+           05  F1R2-MCRD-P-74-NBR-CR               PIC 9(10).
+         03 DISP20.
+           05  F1R2-MCRD-P-75-REV-NBR-CR           PIC 9(10).
+           05  F1R2-MCRD-P-76-NBR-DB               PIC 9(10).
+           05  F1R2-MCRD-P-77-REV-NBR-DB           PIC 9(10).
+           05  F1R2-MCRD-P-78-NM-TFR               PIC 9(10).
+           05  F1R2-MCRD-P-79-REV-NM-TFR           PIC 9(10).
+           05  F1R2-MCRD-P-80-NUM-INQ              PIC 9(10).
+           05  F1R2-MCRD-P-81-NUM-AUTH             PIC 9(10).
+         03 DISP21.
+           05  F1R2-MCRD-P-82-PFEE-AMCR            PIC 9(12).
+           05  F1R2-MCRD-P-83-TFEE-AMCR            PIC 9(12).
+           05  F1R2-MCRD-P-84-PFEE-AMDB            PIC 9(12).
+           05  F1R2-MCRD-P-85-TFEE-AMDB            PIC 9(12).
+           05  F1R2-MCRD-P-86-AMCR                 PIC 9(16).
+           05  F1R2-MCRD-P-87-REV-AMCR             PIC 9(16).
+         03 DISP22.
+           05  F1R2-MCRD-P-88-AMDB                 PIC 9(16).
+           05  F1R2-MCRD-P-89-REV-AMDB             PIC 9(16).
+           05  F1R2-MCRD-P-90-ORIG-DE              PIC 9(16).
+           05  F1R2-MCRD-P-91-FU-CODE              PIC X(01).
+           05  F1R2-MCRD-P-92-FS-CODE              PIC X(02).
+           05  F1R2-MCRD-P-93-LEN                  PIC 9(02).
+           05  F1R2-MCRD-P-93-TRAN-DEST-CD         PIC 9(11).
+           05  F1R2-MCRD-P-94-LEN                  PIC 9(02).
+           05  F1R2-MCRD-P-94-TRANS-ORG-CD         PIC 9(11).
+         03 DISP23.
+           05  F1R2-MCRD-P-95-CIR-DATA             PIC X(12).
+           05  F1R2-MCRD-P-96-MS-CODE              PIC X(16).
+           05  F1R2-MCRD-P-97-NS-AMOUNT            PIC 9(16).
+           05  F1R2-MCRD-P-98-PAYEE                PIC X(25).
+         03 DISP24.
+           05  F1R2-MCRD-P-99-SII-CODE             PIC 9(11).
+           05  F1R2-MCRD-P-100-RII-LEN             PIC 9(02).
+           05  F1R2-MCRD-P-100-RII-CODE            PIC 9(11).
+           05  F1R2-MCRD-P-101-FILE-NAME           PIC X(04).
+           05  F1R2-MCRD-P-102-ACC-ID-1            PIC X(28).
+           05  F1R2-MCRD-P-103-ACC-ID-1            PIC X(28).
+         03 DISP25.
+           05  F1R2-MCRD-P-104-TRN-DESC            PIC X(30).
+           05  F1R2-MCRD-P-111-LEN                 PIC 9(03).
+           05  F1R2-MCRD-P-111-AMOUNT              PIC X(12).
+         03 DISP26.
+           05  F1R2-MCRD-P-123-ADD-LEN             PIC 9(03).
+           05  F1R2-MCRD-P-123-ADD-DATA            PIC X(43).
+         03 DISP27.
+           05  F1R2-MCRD-P-124-ADD-LEN             PIC 9(03).
+           05  F1R2-MCRD-P-124-ADD-DATA            PIC X(43).
+         03 DISP28.
+           05  F1R2-MCRD-P-125-ADD-LEN             PIC 9(03).
+           05  F1R2-MCRD-P-125-ADD-DATA            PIC X(43).
+         03 DISP29.
+           05  F1R2-MCRD-P-127-ADD-LEN             PIC 9(03).
+           05  F1R2-MCRD-P-127-NET-DATA            PIC X(43).
+           05  F1R2-MCRD-FILE-ID                   PIC X(08).
+
